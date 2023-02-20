@@ -1,7 +1,6 @@
 package tests;
 
 import java.math.RoundingMode;
-import java.util.Arrays;
 
 import cps.*;
 import exceptions.*;
@@ -60,29 +59,13 @@ public class Testes {
 		
 		
 		
-//		System.out.println(Arithmetic.pow(-1, 0.5));
+		//System.out.println(Arithmetic.pow(-1, 0.5));
 		
 		
-//		Complex Z = new Complex(-3, -4); // ln(Z) = 1.609... - 2.214...i
-//		System.out.println(Exponential.ln(Z.abs()).add(Z.arg().mult(PNumber.i()))); // arrumar arg!!
-//		
-//		System.out.println(Z.arg()); // -2.214... rad
+		Complex A = new Complex(-3, -4); // ln(A) = 1.609... - 2.214...i
+		System.out.println(Exponential.ln(A.abs()).add(A.arg().mult(PNumber.i()))); // arrumar arg
 		
-		Real[] A = new Real[] {new Real(1), new Real(2), new Real(2), new Real(3), new Real(4), new Real(7), new Real(9)};
-		
-//		System.out.println(Statistics.avg(A));
-//		
-//		System.out.println(Statistics.variance(A));
-//		System.out.println(Statistics.standardDeviation(A));
-//		
-//		System.out.println(Statistics.varianceSample(A));
-//		System.out.println(Statistics.standardDeviationSample(A));
-		
-		System.out.println(Statistics.min(A));
-		System.out.println(Statistics.max(A));
-		
-		System.out.println(Statistics.range(A));
-		System.out.println(Statistics.midrange(A));
+		System.out.println(A.arg()); // -2.214... rad
 		
 	}
 }

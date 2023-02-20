@@ -168,7 +168,7 @@ public class Arithmetic {
 		if(base.isReal()) {
 			try {
 				return pow(base.toReal(), power, scale);
-			} catch (ConversionException ex) { ex.printStackTrace(); return null; }
+			} catch (Exception ex) { ex.printStackTrace(); return null; }
 		}
 		
 		return base.abs().pow(power, scale).mult(Exponential.exp(new Complex(0, base.arg(scale)).mult(power), scale)).scaled(scale);
@@ -195,7 +195,7 @@ public class Arithmetic {
 		if(power.isReal()) {
 			try {
 				return pow(base, power.toReal(), scale).toComplex();
-			} catch (ConversionException ex) { ex.printStackTrace(); return null; }
+			} catch (Exception ex) { ex.printStackTrace(); return null; }
 		}
 		
 		return base.pow(power.getRealPart(), scale).mult(Exponential.exp(new Complex(0, Exponential.ln(base, scale).mult(power.getImaginaryPart())), scale));

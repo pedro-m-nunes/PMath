@@ -1,26 +1,18 @@
 package numbers;
 
-import java.math.RoundingMode;
+import operations.Arithmetic;
+import operations.Exponential;
 
-//public enum Constant { PI, E }
-
-public abstract class PNumber { //? // para que métodos possam retornar só Number // Serializable?
+public class Constants { // realmente calcular as costantes? (fazer todas igual pi?) // enum? // Number?
 	
 	/* Attributes */
 	
-	// NaN, Undefined ??
-	// Infinity?
+	// usar?
+	public static final int SUPER_PRECISION_SCALE = 1037; // 1037 seems enough. Use of Real.scaled() recommended. Press 'More digits' 4 times in WolframAlpha to get 1307 decimal cases.
 	
-	// public?
-	static boolean automaticallyScale = true; // Configuration variable. Automatically rounds repeating 9s and 0s.
-		
 	/* Methods */
-		
-	// Real <-> Complex, equals?, compareTo? // static?
 	
-	
-	/** Constants **/ // enum?
-	// usar String, 1307 dígitos = 'More digits' 4 vezes WolframAlpha
+	/** Principal Constants **/
 	
 	// 0 ?
 	// 1 ?
@@ -43,13 +35,37 @@ public abstract class PNumber { //? // para que métodos possam retornar só Numbe
 	
 	public static Complex i() { return new Complex(0, 1); }
 	
-	// phi
-	// omega
-	// gamma
-	// ? ...
-	
 	// numeros primos?
 	
-	// fibonacci
+	/** Other Constants **/ // usar String, 1307 dígitos = 'More digits' 4 vezes WolframAlpha
 	
+	public static Real phi() { // (1 + sqrt5) / 2 ?
+		try {
+			return Arithmetic.quadraticFormula(1, -1, -1, SUPER_PRECISION_SCALE)[0].toReal();
+		} catch (Exception ex) { ex.printStackTrace(); return null; }
+	}
+	
+	public static Real omega() { // Default scale used due to computing speed.
+		try {
+			return Exponential.productLog(new Real(1)); // double?
+		} catch (Exception ex) { ex.printStackTrace(); return null; }
+	}
+	
+	// Euler's constant ?
+	public static Real gamma() { // ? // scale, iterations // manter? bem imprecisa
+		Real result = new Real(0);
+		Real previous = result;
+		
+		for(int n = 1; n < 10000; n++) {
+			try {
+				result = result.add(
+						new Real(1).div(n).subt(Exponential.ln(1.0 + 1.0 / n))
+						);
+			} catch (Exception ex) { ex.printStackTrace(); return null; }
+			if(result.equals(previous)) return result;
+			previous = result;
+		}
+		
+		return result;
+	}
 }

@@ -1,8 +1,6 @@
-PMath is a Java math library, developed by Pedro Müller Nunes (github.com/pedro-m-nunes).
+PMath is a Java math library, developed by Pedro MÃ¼ller Nunes (github.com/pedro-m-nunes).
 Development began on December 27th, 2022.
 
 Project repository: github.com/pedro-m-nunes/PMath
 
-This library might not be 100% accurate. In doubt, use WolframAlpha (www.wolframalpha.com/) to compute what you want.
-
-This is a work in progress.
+This library may not be 100% accurate. In doubt, use WolframAlpha (www.wolframalpha.com/) to compute what you want.

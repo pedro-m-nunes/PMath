@@ -1,18 +1,16 @@
-package tests;
 import java.math.BigDecimal;
 
 import calculus.Calculus;
-import exceptions.FunctionDomainException;
+import exceptions.InputOutOfDomainException;
 import numbers.Complex;
-import numbers.PNumber;
-import numbers.PNumber;
+import numbers.Constants;
 import numbers.Real;
 import operations.Arithmetic;
 import operations.Exponential;
 import operations.Trigonometry;
 
 public class Test {
-	public static void main(String[] args) throws FunctionDomainException {
+	public static void main(String[] args) throws InputOutOfDomainException {
 		//Real n = new Real(32);
 		//Real m = new Real(4);
 		
@@ -96,22 +94,22 @@ public class Test {
 		System.out.println("0.6931471805599453094172321214581765680755001343602552541206800094...");
 		System.out.println(Exponential.ln(new Real(2)));
 		
-		System.out.println(PNumber.e(0));
-		System.out.println(PNumber.pi(0));
+		System.out.println(Constants.e(0));
+		System.out.println(Constants.pi(0));
 		
 		//System.out.println(new Real(-1.1).frac().add(new Real(-1.1).ceil()));
 		
-		//System.out.println(PNumber.phi());
-		//System.out.println(Arithmetic.add(new Complex(1, 0), Arithmetic.sqrt(5, PNumber.SUPER_PRECISION_SCALE)).div(new Complex(2, 0), PNumber.SUPER_PRECISION_SCALE));
+		//System.out.println(Constants.phi());
+		//System.out.println(Arithmetic.add(new Complex(1, 0), Arithmetic.sqrt(5, Constants.SUPER_PRECISION_SCALE)).div(new Complex(2, 0), Constants.SUPER_PRECISION_SCALE));
 		
-		System.out.println(Exponential.exp(new Complex(0, PNumber.pi())));
+		System.out.println(Exponential.exp(new Complex(0, Constants.pi())));
 		
 		System.out.println(new Real("150000000000000000").toStringE());
 		System.out.println(new Real("150000000000000000").toString10());
 		
-		//System.out.println(Exponential.ln(PNumber.e()));
-		//System.out.println(Exponential.ln(PNumber.e(39), 39).scaled(36)); //?
-		/*
+		//System.out.println(Exponential.ln(Constants.e()));
+		//System.out.println(Exponential.ln(Constants.e(39), 39).scaled(36)); //?
+		
 		System.out.println("0.8813735870195430252326093249797923090281603282616354107532956086...");
 		System.out.println(Trigonometry.arcsinh(new Real(1)));
 		
@@ -120,18 +118,14 @@ public class Test {
 		
 		System.out.println("0.5493061443340548456976226184612628523237452789113747258673471668...");
 		System.out.println(Trigonometry.arctanh(new Real(0.5)));
-		*/
-		// arcsech, arccsch arccoth
-		//System.out.println(Trigonometry.arcsech(new Real(0.5)));
-		//System.out.println(Trigonometry.arccsch(new Real(2)));
-		//System.out.println(Trigonometry.arccoth(new Real(2)));
 		
-		//System.out.println(Exponential.log(new Real(3), new Real(9)));
+		// arcsech, arccsch arccoth
+		System.out.println(Trigonometry.arcsech(new Real(0.5)));
+		System.out.println(Trigonometry.arccsch(new Real(2)));
+		System.out.println(Trigonometry.arccoth(new Real(2)));
+		
+		System.out.println(Exponential.log(new Real(3), new Real(9)));
 		
 		// testar log, log10!
-		
-		System.out.println(PNumber.i().squared());
-		
-		System.out.println(Exponential.exp(-1, 100).negate());
 	}
 }

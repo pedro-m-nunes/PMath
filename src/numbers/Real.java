@@ -57,10 +57,6 @@ public class Real /*extends PNumber*/ implements Comparable<Real> { // Comparato
 	
 	/* Static Methods */ // scale, abs, negate, sign, floor, ceil, frac ? - autoScale?
 	
-	public static Real valueOf(BigDecimal number) { return new Real(number); }
-	
-	public static Real valueOf(double number) { return new Real(number); }
-	
 	/* Methods */
 	
 	public Complex toComplex() { return Complex.valueOf(this); }
@@ -70,7 +66,7 @@ public class Real /*extends PNumber*/ implements Comparable<Real> { // Comparato
 	
 	// ??
 	public Real autoScale(int scale) {
-		if(PNumber.automaticallyScale) { // em PNumber msm?
+		if(PNumber.automaticallyScale) {
 			int cases = (int) (scale * 0.44);
 			
 			String str = "x";
@@ -84,7 +80,6 @@ public class Real /*extends PNumber*/ implements Comparable<Real> { // Comparato
 		return this;
 	}
 	
-	// "round"?
 	public Real scaled() { return scaled(DEFAULT_SCALE, ROUNDING_MODE); }
 	
 	public Real scaled(int decimalCases) { return scaled(decimalCases, ROUNDING_MODE); }
