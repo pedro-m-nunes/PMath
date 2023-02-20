@@ -1,0 +1,107 @@
+- geometria plana (formas geométricas, área, perímetro, bissetriz?)
+- geometria espacial (área, volume)
+- geometria analítica (distância entre pontos)
+- cálculo (lim, derivadas, integrais, séries)
+- trigonometria
+- números complexos
+- álgebra (incógnitas, log/W)
+- álgebra linear (matrizes, vetores, i, j, k)
+- análise combinatória
+- estatística
+- PAs, PGs (?)
+
+// https://mathvault.ca/hub/higher-math/math-symbols/
+
+atualmente trabalhando em: 
+- números complexos e reais (classe Number?)
+- Arithmetic números complexos (pow...)
+- arcsin arccos (combinatorics...)
+- pow (C e R)
+- ln complexo
+- função de arredondamento automático (.9999.../.000...1) - testando (R, C)
+- uso de FunctionDomainException
+	- onde não precisa estar
+	- onde o tratamente deve ser direto dela
+
+coisas específicas para fazer: 
+- função pow (-1, 0.5 ...) - ln(z)
+- cos, sin, ln complexos
+- cps.Combinatorics: binomialCoefficient, pochhammer(x, n) (?), para arcsin
+	// https://mathworld.wolfram.com/BinomialCoefficient.html
+	- factorial em combinatorics (?)
+- ver o que deve ou não ser static (R e C)
+- autoScale nos retornos
+	- ao menos em pow(C, C)
+
+> ver onde new foi usado sem motivo
+> organizar ordem de métodos
+
+dúvidas: 
+- frações?
+- o que deve ser public, private...
+- binômio de Newton?
+- variáveis de configuração: devem ser final?
+- fazer uma classe privada(?) Reference (?) para as escalas e iterations? - enum? - variáveis de configuração?
+- fibonacci?
+- Language? - double[] -> Real[] ...
+
+Funções?: rect, tri, erf
+
+ENUM: +Infinity, -Infinity, 0+, 0-, Undefined
+
+* as classes do default package e tests são temporárias (provavelmente)
+* calculus provavelmente será feito após muito (muito) tempo
+> deixar o código padronizado
+
+
+packages: numbers, operations, calculus, geometry, linearalgebra, combinatorics/probability/statistics
+
+package numbers
+|- class Number ??
+	|- value?, INFINITYs, ZEROs
+|- class Real
+|- class Complex
+|- class/interface Constants
+|- class Fraction/Rational ?
+	|- numerator, denominator, reduce(), decimalValue(), add/subt/mult/div, decimalToFraction(), continuousFraction...
+
+
+package operations
+|- class Arithmetic
+	|- + - / *, pow, roots
+|- class Trigonometry
+	|- sin, cos, tan, (h), arcs
+|- class Exponentials
+	|- exp, log, W
+
+package geometry
+|- abstract class Shape2D
+|- abstract class Shape3D
+|- Line (1D) ?
+|- Point (0D) ?
+|- 4D?
+	|- hypervolume, tesseract
+
+package calculus
+|- Function, Symbol/Variable, ...
+
+exceptions
+// https://www.javatpoint.com/arithmetic-exception-in-java#:~:text=The%20arithmetic%20exception%20is%20a,the%20code%20during%20run%20time.
+- InfinityException ?
+- UndefinedResultException (0^0)
+- DivergentSeriesException
+- DivisionByZeroException ?
+- NotImplementedException - temporária
+- NonRealValueException | ImpossibleConversionException // ConversionException?
+- InputOutOfDomainException // FunctionDomainException?
+
+________________________________________________
+
+Complex: arrumar arg
+Trigonometry: arrumar arctan, fazer arcsin e arccos
+Exponential: fazer ln(C z)
+Real: fazer/arrumar autoScale
+
+- Transformar Statistics em DataSet?
+	- Não usar métodos estáticos, enum POPULATION e SAMPLE
+
