@@ -93,3 +93,14 @@ exceptions
 - NotImplementedException - temporária
 - NonRealValueException | ImpossibleConversionException // ConversionException?
 - InputOutOfDomainException // FunctionDomainException?
+
+_______________________________________
+
+Complex: arrumar arg
+Trigonometry: arrumar arctan, fazer arcsin e arccos
+Exponential: fazer ln complexo
+Real: arrumar/fazer autoScale
+
+- Transformar Statistics em DataSet?
+	- métodos não seriam estáticos, enum POPULATION e SAMPLE
+

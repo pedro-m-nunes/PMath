@@ -57,6 +57,15 @@ public class Real /*extends PNumber*/ implements Comparable<Real> { // Comparato
 	
 	/* Static Methods */ // scale, abs, negate, sign, floor, ceil, frac ? - autoScale?
 	
+	// valueOf(Real)? - pode ser útil para aceitar um número double como Real mais facilmente
+	// 'new Real[] {3, 2, 1}' seria possível?
+	
+	public static Real valueOf(BigDecimal number) { return new Real(number); }
+	
+	// valueOf(String)?
+	
+	public static Real valueOf(double number) { return new Real(number); }
+	
 	/* Methods */
 	
 	public Complex toComplex() { return Complex.valueOf(this); }
